@@ -6,17 +6,19 @@ function ImageList({items}){
     
 
     const listItems = items.map(({name, src, text}) => (
-        <li>
+        <li class='listItems'>
             <img name={name} src={src}/>
-            <p name={name}>{text}</p>
+            <p class='imgText' name={name}>{text}</p>
         </li>
     ));
 
 
     return(
-      <ul>
-        {listItems}
-      </ul>
+        <div class='listArea'>
+            <ul class='list'>
+                {listItems}
+            </ul>
+        </div>
     )
 };
 
