@@ -1,4 +1,6 @@
 import {useState} from 'react';
+import {BsImage} from 'react-icons/bs'
+import {BsFillPlusCircleFill} from 'react-icons/bs'
 
 function ImageForm({addImage}){
 
@@ -24,8 +26,8 @@ function ImageForm({addImage}){
         }
 
         addImage(newImage);
-        // setSrc("");
-        // setText("");
+        setSrc("");
+        setText("");
 
     };
 
@@ -33,12 +35,20 @@ function ImageForm({addImage}){
 
 
     return(
-      <form onSubmit={handleSubmit}>
-        <input type='url' name='urlInput' value={src} onChange={handleSrcInput}></input>
-        <input type='text' name='textInput' value={text} onChange={handleTextInput}></input>
-        <button name='closeButton'>Cancel</button>
-        <button name='submitButton'>Add Image</button>
+        <div>
+        <nav class='navBar'><BsFillPlusCircleFill/></nav>
+      <form class='inputForm' onSubmit={handleSubmit}>
+        
+        <div class='inputs'>
+            <input type='url' class='urlInput' name='urlInput' value={src} onChange={handleSrcInput} placeholder='Image URL'></input>
+            <input type='text' class='textInput' name='textInput' value={text} onChange={handleTextInput} placeholder='Image Caption'></input>
+        </div>
+        <div class='buttons'>
+        <button class='closeButton' name='closeButton'>CANCEL</button>
+        <button class='submitButton' name='submitButton'><BsImage/> ADD IMAGE</button>
+        </div>
       </form>
+      </div>
     )
 };
 
