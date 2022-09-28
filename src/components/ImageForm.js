@@ -36,19 +36,21 @@ function ImageForm({addImage}){
 
     return(
         <div>
-        <nav class='navBar'><BsFillPlusCircleFill/></nav>
-      <form class='inputForm' onSubmit={handleSubmit}>
+            <nav class='navBar'><BsFillPlusCircleFill/></nav>
+            <form class='inputForm' onSubmit={handleSubmit}>
         
-        <div class='inputs'>
-            <input type='url' class='urlInput' name='urlInput' value={src} onChange={handleSrcInput} placeholder='Image URL'></input>
-            <input type='text' class='textInput' name='textInput' value={text} onChange={handleTextInput} placeholder='Image Caption'></input>
+                <div class='inputs'>
+                    <label htmlFor='urlInput'></label>
+                    <input type='url' class='urlInput' id='urlInput' value={src} onChange={handleSrcInput} placeholder='Image URL'></input>
+                    <label htmlFor='textInput'></label>
+                    <input type='text' class='textInput' id='textInput' value={text} onChange={handleTextInput} placeholder='Image Caption'></input>
+                </div>
+                <div class='buttons'>
+                    <button class='closeButton' name='closeButton'>CANCEL</button>
+                    <button class='submitButton' name='submitButton'><BsImage/> ADD IMAGE</button>
+                </div>
+            </form>
         </div>
-        <div class='buttons'>
-        <button class='closeButton' name='closeButton'>CANCEL</button>
-        <button class='submitButton' name='submitButton'><BsImage/> ADD IMAGE</button>
-        </div>
-      </form>
-      </div>
     )
 };
 

@@ -137,3 +137,7 @@ img {
   }
 
 }
+
+label {
+  display: none;
+}
