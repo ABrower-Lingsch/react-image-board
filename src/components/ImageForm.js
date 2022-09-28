@@ -18,7 +18,6 @@ function ImageForm({addImage}){
     }
 
     const handleCancel = (e) => {
-        e.preventDefault();
         setSrc("");
         setText("");
     }
@@ -52,7 +51,7 @@ function ImageForm({addImage}){
                     <input type='text' class='textInput' id='textInput' value={text} onChange={handleTextInput} placeholder='Image Caption'></input>
                 </div>
                 <div class='buttons'>
-                    <button class='closeButton' name='closeButton' onClick={handleCancel}>CANCEL</button>
+                    <button  type = 'button' class='closeButton' name='closeButton' onClick={handleCancel}>CANCEL</button>
                     <button class='submitButton' name='submitButton'><BsImage/> ADD IMAGE</button>
                 </div>
             </form>
