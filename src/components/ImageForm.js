@@ -17,6 +17,12 @@ function ImageForm({addImage}){
         setText(e.target.value);
     }
 
+    const handleCancel = (e) => {
+        e.preventDefault();
+        setSrc("");
+        setText("");
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -46,7 +52,7 @@ function ImageForm({addImage}){
                     <input type='text' class='textInput' id='textInput' value={text} onChange={handleTextInput} placeholder='Image Caption'></input>
                 </div>
                 <div class='buttons'>
-                    <button class='closeButton' name='closeButton'>CANCEL</button>
+                    <button class='closeButton' name='closeButton' onClick={handleCancel}>CANCEL</button>
                     <button class='submitButton' name='submitButton'><BsImage/> ADD IMAGE</button>
                 </div>
             </form>
