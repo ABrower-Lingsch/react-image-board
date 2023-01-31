@@ -1,4 +1,5 @@
 import { useState } from "react";
+import {nanoid} from "nanoid"
 
 
 function ImageList({items}){
@@ -6,16 +7,16 @@ function ImageList({items}){
     
 
     const listItems = items.map(({name, src, text}) => (
-        <li class='listItems'>
-            <img name={name} src={src}/>
-            <p class='imgText' name={name}>{text}</p>
+        <li className='listItems' key={nanoid()}>
+            <img name={name} src={src} />
+            <p className='imgText' name={name} >{text}</p>
         </li>
     ));
 
 
     return(
-        <div class='listArea'>
-            <ul class='list'>
+        <div className='listArea'>
+            <ul className='list'>
                 {listItems}
             </ul>
         </div>
